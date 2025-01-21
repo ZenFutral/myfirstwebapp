@@ -1,0 +1,7 @@
+{% macro set_style(style_name) -%}
+    <link rel="stylesheet" type="text/css" href="{{ "static/css/" ~ style_name ~ ".css" }}">
+{%- endmacro %}
+
+{% macro load_script(script_name) -%}
+    <script src="{{ "static/js/" ~ script_name ~ ".js" }}"></script>
+{%- endmacro %}
