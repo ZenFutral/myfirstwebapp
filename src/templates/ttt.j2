@@ -1,23 +1,30 @@
-{% from 'macros.j2' import set_style, load_script %}
+{% import 'macros.j2' as m %}
 
 {% block head %}
-    {{ set_style(page_name) }}
+    {{ m.set_style(page_name) }}
+    {{ m.set_page_info("tic-tac-toe") }}
 {% endblock head %}
 
 {% block body %}
-<div id="main">
-    <h1>TIC TAC TOE</h1>
-    <p id="ins">
-        Tap on a box to play.<br><br>
-        <b>Player X</b> starts first, followed by <b>Player O</b>.
-    </p>
-    <div id="board" class="board"></div>
-    <br>
-    <button id="reset" class="reset">RESET</button>
-    <p id="message" class="message"></p>
-</div>
+    <div id="main">
+        <h1>
+            TIC TAC TOE
+        </h1>
+        <p id="ins">
+            Tap on a box to play.
+            <br>
+            <br>
+            <b>Player X</b> starts first, followed by <b>Player O</b>.
+        </p>
+        <div id="board" class="board"></div>
+        <br>
+        <button id="reset" class="reset">
+            RESET
+        </button>
+        <p id="message" class="message"></p>
+    </div>
 {% endblock body %}
 
 {% block script %}
-    {{ load_script(page_name) }}
+    {{ m.load_script(page_name) }}
 {% endblock script %}

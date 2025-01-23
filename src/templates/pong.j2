@@ -1,0 +1,44 @@
+{% import 'macros.j2' as m %}
+
+{% block head %}
+    {{ m.set_style(page_name) }}
+    {{ m.set_page_info("Pong Game") }}
+{% endblock head %}
+
+{% block body %}
+    <table class="var_data">
+        <tr>
+            <td>    
+                <h1 class="v_speed"></h1>
+            </td>
+        </tr>
+        <tr>
+            <td>    
+                <h1 class="h_speed"></h1>
+            </td>
+        </tr>
+        <tr>
+            <td>    
+                <h1 class="ball_dir"></h1>
+            </td>
+        </tr>
+    </table>
+    <div class="board">
+        <div class='ball'>
+            <div class="ball_effect"></div>
+        </div>
+        <div class="paddle_1 paddle"></div>
+        <div class="paddle_2 paddle"></div>
+        <h1 class="player_1_score">0</h1>
+        <h1 class="player_2_score">0</h1>
+        <div class="message_holder">
+            <h1 class="message">
+                Press Enter to Play Pong
+            </h1>
+        </div>
+    </div>
+{% endblock body %}
+
+{% block script %}
+    {{ m.load_script(page_name) }}
+{% endblock script %}

@@ -14,13 +14,16 @@ const TicTac = {
     // Create the game board dynamically
     cBoard() {
         const board = document.getElementById("board");
+
         board.innerHTML = ""; // Clear previous board
+
         this.state.forEach((_, i) => {
             const cell = document.createElement("div");
             cell.classList.add("cell");
             cell.dataset.index = i;
             board.appendChild(cell);
         });
+        
         board.addEventListener("click", (e) => this.handleClick(e)); // Handle clicks on the board
         this.uMessage(`Player ${this.cPlayer}'s turn`);
     },

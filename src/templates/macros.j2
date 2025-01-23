@@ -2,6 +2,15 @@
     <link rel="stylesheet" type="text/css" href="{{ "static/css/" ~ style_name ~ ".css" }}">
 {%- endmacro %}
 
+{% macro set_page_info(title) -%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This page is used as a testing environment only.">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Zen Futral">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+{%- endmacro %}
+
 {% macro load_script(script_name) -%}
     <script src="{{ "static/js/" ~ script_name ~ ".js" }}"></script>
 {%- endmacro %}
